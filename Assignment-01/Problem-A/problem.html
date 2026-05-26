@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>A. Odd or Even?</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: #f5f4f0; color: #1a1917; padding: 2.5rem 1rem 4rem; }
+    .page { max-width: 780px; margin: 0 auto; }
+
+    .breadcrumb { font-size: 11.5px; font-weight: 600; color: #1a56db; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1rem; }
+    .breadcrumb span { color: #6b6960; font-weight: 400; margin: 0 6px; }
+
+    h1 { font-family: 'Source Serif 4', serif; font-size: 2.2rem; font-weight: 600; margin-bottom: 1rem; line-height: 1.2; }
+
+    .meta-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 1rem; }
+    .meta-chip { display: flex; align-items: center; gap: 6px; font-size: 12.5px; color: #6b6960; background: #fff; border: 1px solid #e2e0d8; padding: 5px 12px; border-radius: 6px; }
+    .meta-chip strong { color: #1a1917; font-weight: 600; }
+
+    .forbidden { background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 10px 16px; font-size: 13px; color: #92400e; margin-bottom: 1.8rem; line-height: 1.6; }
+    .forbidden strong { font-weight: 700; }
+
+    .divider { border: none; border-top: 1px solid #e2e0d8; margin: 1.5rem 0 0.8rem; }
+
+    .section-label { font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #6b6960; margin-bottom: 0.6rem; }
+
+    p { font-family: 'Source Serif 4', serif; font-size: 15.5px; line-height: 1.75; color: #2d2c29; margin-bottom: 1rem; }
+    .math { font-style: italic; }
+    sup { font-size: 0.75em; }
+
+    .example-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 0.8rem; }
+    .io-block { border: 1px solid #e2e0d8; border-radius: 8px; overflow: hidden; background: #fff; }
+    .io-label { display: flex; justify-content: space-between; align-items: center; padding: 8px 14px; background: #f8f7f3; border-bottom: 1px solid #e5e3d8; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; color: #6b6960; }
+    .copy-btn { font-size: 11px; color: #1a56db; background: none; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; font-weight: 500; padding: 2px 8px; border-radius: 4px; }
+    .copy-btn:hover { background: #eff4ff; }
+    .io-content { padding: 14px; font-family: 'JetBrains Mono', monospace; font-size: 13px; line-height: 1.9; color: #c0392b; white-space: pre; }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <div class="breadcrumb">CSE221 <span>·</span> Assignment 01 <span>·</span> Problem A</div>
+
+  <h1>A. Odd or Even?</h1>
+
+  <div class="meta-row">
+    <div class="meta-chip">⏱ Time limit <strong>1 second</strong></div>
+    <div class="meta-chip">💾 Memory limit <strong>256 megabytes</strong></div>
+  </div>
+
+  <div class="forbidden">
+    <strong>Forbidden Keywords for the Quiz:</strong>
+    sort, open, file, creat(, fstream, thread, process, system(, exec(
+  </div>
+
+  <p>Do you know how to tell if a number is <strong><em>Odd</em></strong> or <strong><em>Even</em></strong>? You are given <span class="math">T</span> numbers, and for each of those numbers, you have to tell whether the number is odd or even.</p>
+
+  <hr class="divider"/>
+  <div class="section-label">Input</div>
+  <p>The first line will contain a single integer <span class="math">T</span> (1 ≤ <span class="math">T</span> ≤ 100). Each of the next <span class="math">T</span> lines will contain a number <span class="math">N</span> (−10<sup>5</sup> ≤ <span class="math">N</span> ≤ 10<sup>5</sup>).</p>
+
+  <hr class="divider"/>
+  <div class="section-label">Output</div>
+  <p>For each <span class="math">N</span>, you have to print whether the number is odd or even. See the sample input-output format to know what exactly you have to print.</p>
+
+  <hr class="divider"/>
+  <div class="section-label">Example</div>
+  <div class="example-grid">
+    <div class="io-block">
+      <div class="io-label">input <button class="copy-btn" onclick="copyText('5\n10\n19\n7\n3\n100',this)">Copy</button></div>
+      <div class="io-content">5
+10
+19
+7
+3
+100</div>
+    </div>
+    <div class="io-block">
+      <div class="io-label">output <button class="copy-btn" onclick="copyText('10 is an Even number.\n19 is an Odd number.\n7 is an Odd number.\n3 is an Odd number.\n100 is an Even number.',this)">Copy</button></div>
+      <div class="io-content">10 is an Even number.
+19 is an Odd number.
+7 is an Odd number.
+3 is an Odd number.
+100 is an Even number.</div>
+    </div>
+  </div>
+
+</div>
+<script>
+function copyText(text, btn) {
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = 'Copy', 1500);
+  });
+}
+</script>
+</body>
+</html>
